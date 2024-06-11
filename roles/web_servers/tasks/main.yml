@@ -1,11 +1,10 @@
  - name: install apache2 package (Ubuntu)
-   tags: apache,apache2,ubuntu
-   apt:
+   tags: apache,php,ubuntu
+   package:
      name:
-       - apache2
-       - libapache2-mod-php
+       - "{{ apache_package_name }}"
+       - "{{ php_package_name }}"
      state: latest
-   when: ansible_distribution == "Ubuntu"
 
  - name: copy default html file for site
    tags: apache,apache2
