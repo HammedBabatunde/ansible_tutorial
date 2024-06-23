@@ -27,6 +27,6 @@
         az: "{{ zone1 }}"
         cidr: "{{ PubSub1Cidr }}"
         map_public: yes
-        resorce_tags:
+        resource_tags:
           Name: vprofile-pubsub1
       register: pubsub1out
