@@ -150,9 +150,9 @@
         - privsub2out.subnet.id
         - privsub3out.subnet.id
         - igw_out.gateway_id
-        - pubRT_out.route_table_id
+        - pubRT_out.route_table.id
         - NATGW_out.nat_gateway_id
-        - privRT_out.route_table_id
+        - privRT_out.route_table.id
 
     - set_fact:
         vpc_id: "{{ vpcout.vpc.id }}"
@@ -163,12 +163,12 @@
         privsub2_id: "{{ privsub2out.subnet.id }}"
         privsub3_id: "{{ privsub3out.subnet.id }}"
         igw_id: "{{ igw_out.gateway_id }}"
-        # pubRT_id: "{{ pubRT_out.route_table_id }}"
+        pubRT_id: "{{ pubRT_out.route_table_id }}"
         NATGW_id: "{{ NATGW_out.nat_gateway_id }}"
-        # privRT_id: "{{ privRT_out.route_table_id }}"
+        privRT_id: "{{ privRT_out.route_table_id }}"
         cacheable: yes
 
-    # - name: Create Variables file for vpc output
-    #   copy:
-    #     content: "vpc_id: {{ vpcout.vpc.id }}\npubsub1_id: {{ pubsub1out.subnet.id }}\npubsub2_id: {{ pubsub2out.subnet.id }}\npubsub3_id: {{ pubsub3out.subnet.id }}\nprivsub1_id: {{ privsub1out.subnet.id }}\nprivsub2_id: {{ privsub2out.subnet.id }}\nprivsub3_id: {{ privsub3out.subnet.id }}\nigw_id: {{ igw_out.gateway_id }}\npubRT_id: {{ pubRT_out.route_table_id }}\nNATGW_id: {{ NATGW_out.nat_gateway_id }}\nprivRT_id: {{ privRT_out.route_table_id }}"
-    #     dest: vars/output_vars
+    - name: Create Variables file for vpc output
+      copy:
+        content: "vpc_id: {{ vpcout.vpc.id }}\npubsub1_id: {{ pubsub1out.subnet.id }}\npubsub2_id: {{ pubsub2out.subnet.id }}\npubsub3_id: {{ pubsub3out.subnet.id }}\nprivsub1_id: {{ privsub1out.subnet.id }}\nprivsub2_id: {{ privsub2out.subnet.id }}\nprivsub3_id: {{ privsub3out.subnet.id }}\nigw_id: {{ igw_out.gateway_id }}\npubRT_id: {{ pubRT_out.route_table_id }}\nNATGW_id: {{ NATGW_out.nat_gateway_id }}\nprivRT_id: {{ privRT_out.route_table_id }}"
+        dest: vars/output_vars
