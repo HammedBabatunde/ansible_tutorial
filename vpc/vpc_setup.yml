@@ -163,7 +163,6 @@
         privsub2_id: "{{ privsub2out.subnet.id }}"
         privsub3_id: "{{ privsub3out.subnet.id }}"
         igw_id: "{{ igw_out.gateway_id }}"
-        pubRT_id: "{{ pubRT_out.route_table_id }}"
         NATGW_id: "{{ NATGW_out.nat_gateway_id }}"
         cacheable: yes
 
