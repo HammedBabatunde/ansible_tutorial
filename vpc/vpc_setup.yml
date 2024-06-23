@@ -165,7 +165,6 @@
         igw_id: "{{ igw_out.gateway_id }}"
         pubRT_id: "{{ pubRT_out.route_table_id }}"
         NATGW_id: "{{ NATGW_out.nat_gateway_id }}"
-        privRT_id: "{{ privRT_out.route_table_id }}"
         cacheable: yes
 
     - name: Create Variables file for vpc output
