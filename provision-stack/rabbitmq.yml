@@ -60,6 +60,22 @@
       tags:
         - package
 
+    - name: Add universe repository
+      ansible.builtin.apt_repository:
+        repo: deb http://archive.ubuntu.com/ubuntu bionic universe
+        state: present
+
+    - name: Install dependencies
+      apt:
+        name:
+          - libncurses5
+          - libwxbase3.0-0v5
+          - libwxgtk3.0-0v5
+        state: present
+        update_cache: yes
+      tags:
+        - package
+
     - name: Install Erlang
       apt:
         name: esl-erlang
