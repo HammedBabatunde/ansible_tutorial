@@ -5,9 +5,9 @@
   gather_facts: no
   tasks:
     - name: Import VPC setup Variable
-      include_vars: vpc/vars/bastion_setup
+      include_vars: vpc/vars/vpc_setup
 
-    - name: Import VPC setup Variable
+    - name: Import Output Variables
       include_vars: vpc/vars/output_vars
 
     - name: Create vprofile ec2 key
