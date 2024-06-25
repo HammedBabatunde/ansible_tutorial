@@ -60,6 +60,12 @@
       tags:
         - package
 
+    - name: Add missing public key
+      apt_key:
+        id: '3B4FE6ACC0B21F32'
+        keyserver: 'keyserver.ubuntu.com'
+        state: present
+
     - name: Add universe repository
       ansible.builtin.apt_repository:
         repo: deb http://archive.ubuntu.com/ubuntu bionic universe
