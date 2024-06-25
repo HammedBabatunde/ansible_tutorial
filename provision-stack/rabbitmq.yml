@@ -83,6 +83,10 @@
       command: apt-get install -f
       become: yes
 
+    - name: Update package lists
+      apt:
+        update_cache: yes
+
     - name: Install Erlang
       apt:
         name: erlang
