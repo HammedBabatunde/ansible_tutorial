@@ -76,7 +76,7 @@
         name:
           - libncurses6
           - libwxbase3.0-0v5
-          - libwxgtk3.0-0v5
+          - libwxgtk3.0-gtk3-0v5
         state: present
         update_cache: yes
       tags:
