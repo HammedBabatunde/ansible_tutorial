@@ -24,65 +24,6 @@
       tags:
         - package
 
-    - name: Add an Apt signing key for RabbitMQ
-      apt_key:
-        url: https://packagecloud.io/rabbitmq/rabbitmq-server/gpgkey
-        id: F6609E60DC62814E
-        state: present
-      tags:
-        - package
-
-    - apt_repository:
-        repo: deb https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu/ bionic main
-        state: present
-      tags:
-        - package
-
-    - name: Add an Apt signing key for Erlang Solutions
-      apt_key:
-        url: https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc
-        state: present
-      tags:
-        - package
-
-    - name: Add Erlang Solutions repository
-      apt_repository:
-        repo: "deb https://packages.erlang-solutions.com/ubuntu bionic contrib"
-        state: present
-      tags:
-        - package
-
-    - name: Add missing public key
-      apt_key:
-        id: '3B4FE6ACC0B21F32'
-        keyserver: 'keyserver.ubuntu.com'
-        state: present
-
-    - name: Add universe repository
-      ansible.builtin.apt_repository:
-        repo: deb http://archive.ubuntu.com/ubuntu bionic universe
-        state: present
-
-    - name: Add Xenial repository
-      ansible.builtin.apt_repository:
-        repo: deb http://archive.ubuntu.com/ubuntu xenial main
-        state: present
-
-    - name: Install dependencies
-      apt:
-        name:
-          - libncurses6
-          - libwxbase3.0-0v5
-          - libwxgtk3.0-gtk3-0v5
-        state: present
-        update_cache: yes
-      tags:
-        - package
-
-    - name: Fix broken dependencies
-      command: apt-get install -f
-      become: yes
-
     - name: Update package lists
       apt:
         update_cache: yes
@@ -90,8 +31,6 @@
     - name: Install Erlang
       apt:
         name: erlang
-        update_cache: yes
-        cache_valid_time: 86400
         state: present
       tags:
         - package
