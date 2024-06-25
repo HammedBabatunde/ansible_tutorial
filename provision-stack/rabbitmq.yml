@@ -71,6 +71,11 @@
         repo: deb http://archive.ubuntu.com/ubuntu bionic universe
         state: present
 
+    - name: Add Xenial repository
+      ansible.builtin.apt_repository:
+        repo: deb http://archive.ubuntu.com/ubuntu xenial main
+        state: present
+
     - name: Install dependencies
       apt:
         name:
