@@ -16,14 +16,6 @@
       tags:
         - package
 
-    - name: Install Erlang
-      apt:
-        name: erlang
-        update_cache: yes
-        cache_valid_time: 86400
-        state: present
-      tags:
-        - package
 
     - name: Add an Apt signing key, uses whichever key is at the URL
       apt_key:
@@ -93,9 +85,10 @@
 
     - name: Install Erlang
       apt:
-        name: esl-erlang
-        state: present
+        name: erlang
         update_cache: yes
+        cache_valid_time: 86400
+        state: present
       tags:
         - package
 
