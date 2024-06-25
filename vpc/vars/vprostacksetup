@@ -1,0 +1,6 @@
+region: us-east-2
+ngnix_ami: ami-0e3606a8091a015e5
+tomcat_ami: ami-0e3606a8091a015e5
+memcache_ami: ami-0e3606a8091a015e5
+rmq_ami: ami-0e3606a8091a015e5
+mysql_ami: ami-0e3606a8091a015e5
