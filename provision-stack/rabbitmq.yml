@@ -32,6 +32,14 @@
       tags:
         - package
 
+    - name: Add an Apt signing key for RabbitMQ
+      apt_key:
+        url: https://packagecloud.io/rabbitmq/rabbitmq-server/gpgkey
+        id: F6609E60DC62814E
+        state: present
+      tags:
+        - package
+
     - apt_repository:
         repo: deb https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu/ bionic main
         state: present
