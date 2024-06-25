@@ -74,7 +74,7 @@
     - name: Install dependencies
       apt:
         name:
-          - libncurses5
+          - libncurses6
           - libwxbase3.0-0v5
           - libwxgtk3.0-0v5
         state: present
