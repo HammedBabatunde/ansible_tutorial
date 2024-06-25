@@ -87,6 +87,10 @@
       tags:
         - package
 
+    - name: Fix broken dependencies
+      command: apt-get install -f
+      become: yes
+
     - name: Install Erlang
       apt:
         name: esl-erlang
